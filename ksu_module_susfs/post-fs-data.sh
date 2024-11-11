@@ -4,6 +4,7 @@ MODDIR=/data/adb/modules/susfs4ksu
 
 SUSFS_BIN=/data/adb/ksu/bin/ksu_susfs
 
+# shellcheck disable=SC3046,SC3051
 source ${MODDIR}/utils.sh
 
 ## Important Notes:
@@ -94,5 +95,3 @@ EOF
 cat <<EOF >/dev/null
 ${SUSFS_BIN} set_uname '5.15.137-android14-11-gb572b1fac135-ab11919372' '#1 SMP PREEMPT Mon Jun 3 16:35:10 UTC 2024'
 EOF
-
-
