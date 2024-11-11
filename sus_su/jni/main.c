@@ -1,4 +1,3 @@
-#include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -92,7 +91,7 @@ static int req_root_shell(void) {
     return 1;
   }
 
-  bytes = write(fd, sus_su_token, sizeof(sus_su_token));
+  bytes = write(fd, sus_su_token, strlen(sus_su_token));
   if (bytes < 0) {
     perror("Failed to write to device");
     close(fd);
@@ -106,7 +105,6 @@ static int req_root_shell(void) {
     return 1;
   }
 
-  printf("Thanks for using sus-su!\n");
   return 0;
 }
 
